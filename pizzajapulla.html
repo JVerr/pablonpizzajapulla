@@ -1,0 +1,173 @@
+<html>
+<body>
+    <div id="overlay" onclick="overlayOff()">
+        <h3>Kiitos tilauksestasi!</h3>
+    </div>
+<div class="main-div">
+    <div class="shoppingcart">
+        <h2 style=padding-left:20px>Ostoskori</h2>
+        <div class="item">
+            <p id="pizza-amount">Pizza x <span id="pizza"></span></p>
+        </div>
+        <div class="item">
+            <p id="pulla-amount">Pulla x <span id="pulla"></span></p>
+        </div>
+        <button id="tilausnappi" class="tilausnappi" onclick="overlayOn()">Tilaa!</button>
+    </div>
+    <div class="shop-div">
+        <div class="head-img">
+            <h1>
+                PABLON PIZZA JA PULLA
+            </h1>
+        </div>
+        <div class="main-content">
+            <h2>Valitse haluamasi tuote</h2>
+                <div class="pizza">
+                    <button class="nappi" onclick="buyPizza()">Pizza</button>
+                </div>
+                <div class="pulla">
+                    <button class="nappi" onclick="buyPulla()">Pulla</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+var pizza = 0;
+var pulla = 0;
+
+
+function buyPizza(){
+    pizza++;
+    document.getElementById("pizza").innerHTML = pizza;
+    document.getElementById("pizza-amount").style.display = "block";
+    document.getElementById("tilausnappi").style.display = "block";
+}
+
+function buyPulla(){
+    pulla++;
+    document.getElementById("pulla").innerHTML = pulla;
+    document.getElementById("pulla-amount").style.display = "block";
+    document.getElementById("tilausnappi").style.display = "block";
+}
+function overlayOff(){
+    document.getElementById("overlay").style.display = "none";
+}
+function overlayOn(){
+    document.getElementById("overlay").style.display = "block";
+}
+
+</script>
+
+
+
+<style>
+h1 {
+    padding-top: 70;
+    padding-left: 150;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70;
+}
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30;
+    padding: auto;
+}
+h3 {
+    margin-left: 50px;
+    margin-top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70;
+    color:#48f76e;
+}
+.shop-div {
+    width: 960px;
+    height: 1300px;
+    margin: auto;
+    background-color: #e3e8e8;
+}
+.head-img {
+    height: 400px;
+    background-image: url("kokki.jpg");
+}
+.main-content {
+    padding-top: 40px;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.pizza {
+    margin: auto;
+    margin-bottom: 30px;
+    width: 480px;
+    height: 321px;
+    background-image: url("pizza.jpg");
+}
+.pulla {
+    margin: auto;
+    width: 480px;
+    height: 321px;
+    background-image: url("pulla.jpg");
+}
+.nappi {
+    margin-top: 240px;
+    border-width: 5px;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    border-color: #48f76e;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.tilausnappi {
+    margin-top: 60px;
+    margin-left: 20px;
+    border-width: 5px;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    border-color: #48f76e;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.shoppingcart {
+    float: left;
+    width: 300px;
+    height: 300px;
+    background-color: #e3e8e8;
+    position:sticky;
+    top: 10px;
+    left: 150;
+}
+.item {
+    padding-left: 20px;
+}
+#pizza-amount {
+    display: none;
+}
+#pulla-amount {
+    display: none;
+}
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+#tilausnappi {
+    display: none;
+}
+
+
+
+</style>
+</body>
+</html>
